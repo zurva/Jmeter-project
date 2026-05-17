@@ -25,7 +25,9 @@ jobs:
 
       - name: Run Performance Tests
         run: |
-          mkdir -p results reports
+          mkdir -p results 
+          rm -rf reports
+          mkdir -p reports
           jmeter/bin/jmeter -n \
             -t tests/load_test.jmx \
             -l results/results.jtl \
